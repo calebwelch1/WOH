@@ -18,5 +18,8 @@ class mainCharacter extends Character {
     }
 }
 
-const Joeyy = new Person(1, 'Joeyy', 8, 20,);
-const Darla = new Person(2, 'Darla', 8, 20,);
+// const Joeyy = new Person(1, 'Joeyy', 8, 20,);
+// const Darla = new Person(2, 'Darla', 8, 20,);
+const Tyler = new mainCharacter(3, 'Tyler', 9, 16, 20);
+
+export {Character, Tyler};

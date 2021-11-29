@@ -1,17 +1,20 @@
 <template>
 <div>
 <div class="container">
-  <div class="col-span-12">
+  <div class="col-span-12 h-full">
     <el-tabs v-model="currentTab" @tab-click="handleClick">
       <el-tab-pane label="woh" name="first">
          <div class="grid-col-12 w-full">
-         <div class="col-span-8" style="background-color:white; height: 80vh; border: 4px solid blue;">
-          <component @advanceGame="gameStep++" v-bind:is="currentGameScreen" />
+         <div class="col-span-8" style="background-color:white; height: 90vh; border: 4px solid blue;">
+          <component @advanceGame="gameStep++" v-bind:is="currentGameScreen" @characterselect="p1 = Tyler"/>
           </div>
-          <div class="col-span-4 flex-col" style="background-color:white; height: 80vh;border: 4px solid red;">
-            <div class="flex-col" style="background-color:white; height: 50%;border: 4px solid green;">
+          <div class="col-span-4 flex-col" style="background-color:white; height: 90vh;border: 4px solid red;">
+            <div id="item-box" class="flex-col" style="background-color:white; height: 50%;border: 4px solid green;">
             </div>
-            <div class="flex-col" style="background-color:white; height: 50%;border: 4px solid pink;">
+            <div id="character-box" class="flex-col" style="background-color:white; height: 50%;border: 4px solid pink;">
+            <p style="color: black;">
+            {{p1}}
+            </p>
             </div>
           </div>
         </div>
@@ -26,6 +29,8 @@ import { Tabs } from 'element-ui'
 import blogtest from './blogtest.jpg';
 import Start from './screens/Start.vue';
 import CharacterSelect from './screens/CharacterSelect.vue';
+import StoryTitle from './screens/StoryTitle.vue';
+import {Character, Tyler } from './characters.js';
 
 export default {
   name: 'HomeRouter',
@@ -33,6 +38,7 @@ export default {
     elTabs:Tabs,
     Start,
     CharacterSelect,
+    StoryTitle,
   },
   props: {
     msg: String
@@ -41,8 +47,11 @@ export default {
   return {
     blogtest,
     currentTab: 'first',
+    Character,
+    Tyler,
+    p1:{},
     gameStep: 0,
-    screens:[Start, CharacterSelect],
+    screens:[Start, CharacterSelect, StoryTitle],
   }
  },
  computed: {
@@ -108,4 +117,6 @@ overflow: auto;
 /deep/.el-tabs__item {
   color: #b7b7b7;
 }
+
+
 </style>
