@@ -27,10 +27,12 @@
 <script>
 import { Tabs } from 'element-ui'
 import blogtest from './blogtest.jpg';
+import {Character, Tyler } from './characters.js';
+//screens
 import Start from './screens/Start.vue';
 import CharacterSelect from './screens/CharacterSelect.vue';
 import StoryTitle from './screens/StoryTitle.vue';
-import {Character, Tyler } from './characters.js';
+import Scissors0 from './screens/Scissors0.vue';
 
 export default {
   name: 'HomeRouter',
@@ -39,6 +41,7 @@ export default {
     Start,
     CharacterSelect,
     StoryTitle,
+    Scissors0,
   },
   props: {
     msg: String
@@ -51,7 +54,8 @@ export default {
     Tyler,
     p1:{},
     gameStep: 0,
-    screens:[Start, CharacterSelect, StoryTitle],
+    //plus is it's easy, minus is that it's linear :b
+    screens:[Start, CharacterSelect, StoryTitle, Scissors0],
   }
  },
  computed: {

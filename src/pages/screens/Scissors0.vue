@@ -1,15 +1,23 @@
 <template>
 <div class="container">
-    <div class="col-span-12 flex-col h-20" style="background-color: slategrey;width: 100%; height: 100%;">
+<div class="col-span-12 flex-col h-20" style="background-color: slategrey;width: 100%; height: 100%;">
       <div class="flex-row">
-        <div class="h-31 w-44 character" style="background-color:black; margin: 10px;" @click="$emit('characterselect') && $emit('advanceGame')">
+        <div class="h-31 w-32 character flex-col" style="background-color:black; margin: 10px;">
+          <p style="color:white; font-weight:700; font-size: 1.6rem; margin-y: auto;">
+          Your friend left you a notebook detailing the ritual<br>
+          necessary to manifest this woman's spirit in our world<br>
+          <br>
+          It says that for the ritual you will need to draw a sigil<br>
+          and light some holy candles at midnight<br>
+          You can only hope your friend left them somewhere around school<br>
+          <br>
+          You should also check your friends notes<br>
+          To make sure you know the correct steps for the ritual<br>
+          </p>
         </div>
         <div class="flex-col">
-          <div class="h-20 w-20" style="background-color:red; margin: 10px;">
+          <div class="h-31 w-30" style="background-color:red; margin: 10px;">
           </div>
-          <button class="h-10 w-20" style="border: 4px solid green; margin: 10px;">
-          Start
-          </button>
         </div>
       </div>
     </div>
